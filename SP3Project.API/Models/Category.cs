@@ -1,4 +1,6 @@
-﻿namespace SP3Project.Domain.Models
+﻿using System.Collections.Generic;
+
+namespace SP3Project.API.Models
 {
     public class Category
     {

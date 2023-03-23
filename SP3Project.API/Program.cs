@@ -1,5 +1,10 @@
+using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using SP3Project.Persistance.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using SP3Project.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +17,9 @@ builder.Services.AddSwaggerGen();
 
 #region DBConfigs
 
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+var serverVersion = new MySqlServerVersion(new Version(8,
+                                                       0,
+                                                       26));
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<DataContext>(options =>

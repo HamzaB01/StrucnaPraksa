@@ -1,4 +1,4 @@
-﻿namespace SP3Project.Domain.Models
+﻿namespace SP3Project.API.Models
 {
     public class Product
     {
